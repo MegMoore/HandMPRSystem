@@ -17,5 +17,11 @@ namespace HandMPRSystem.Data
         public DbSet<HandMPRSystem.Models.Client> Clients { get; set; } = default!;
 
         public DbSet<HandMPRSystem.Models.Order> Orders { get; set; } = default!;
+
+        public DbSet<HandMPRSystem.Models.Product> Products { get; set; } = default!;
+
+        public DbSet<HandMPRSystem.Models.Pantograph> Pantographs { get; set; } = default!;
+
+        public DbSet<HandMPRSystem.Models.Orderline> Orderlines { get; set; } = default!;
     }
 }
