@@ -31,6 +31,7 @@ namespace HandMPRSystem.Controllers
           }
             return await _context.Clients.ToListAsync();
         }
+        
 
         // GET: api/Clients/5
         [HttpGet("{id}")]
@@ -49,6 +50,48 @@ namespace HandMPRSystem.Controllers
 
             return client;
         }
+        // GET: api/Clients/5
+        [HttpGet("lastname/{lastname}")]
+        public async Task<ActionResult<IEnumerable<Client>>> GetClientByLastname(string lastname)
+        {
+          if (_context.Clients == null)
+          {
+              return NotFound();
+          }
+            var clients = await _context.Clients.
+                Where(x => x.Lastname.Contains(lastname)).ToListAsync();
+
+
+            return clients;
+        }
+
+        // GET: api/clients/username/password
+        [HttpGet("{username}/{password}")]
+        public async Task<ActionResult<Client>> LoginClient(string username, string password)
+        {
+            var client = await _context.Clients.SingleOrDefaultAsync(x => x.Username == username && x.Password == password);
+
+            if (client == null)
+            {
+                return NotFound();
+            }
+         
+            return client;
+        }
+        // GET: api/clients/username
+        [HttpGet("username/{username}")]
+        public async Task<ActionResult<Client>> GetByUsername(string username)
+        {
+            var client = await _context.Clients.SingleOrDefaultAsync(x => x.Username == username);
+
+            if (client == null)
+            {
+                return NotFound();
+            }
+            return client;
+        }
+
+        
 
         // PUT: api/Clients/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

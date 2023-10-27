@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace HandMPRSystem.Models
 {
+    [Index("Username", IsUnique = true)]
     public class Client
     {
         public int Id { get; set; }
@@ -12,7 +14,7 @@ namespace HandMPRSystem.Models
         [StringLength(255)]
         public string? Email { get; set; } = string.Empty;
         [StringLength(12)]
-        public string? Phone { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
         [StringLength(80)]
         public string Address { get; set; } = string.Empty;
         [StringLength(30)]
