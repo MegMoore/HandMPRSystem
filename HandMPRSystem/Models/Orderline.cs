@@ -11,10 +11,10 @@ namespace HandMPRSystem.Models
         [JsonIgnore]
         public virtual Order? Order { get; set; }
 
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
         public virtual Product? Product { get; set; }
 
-        public int PantographId { get; set; }
+        public int? PantographId { get; set; }
         public virtual Pantograph? Pantograph { get; set; }
 
 

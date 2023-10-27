@@ -12,8 +12,8 @@ namespace HandMPRSystem.Models
         public string Status { get; set; } = "NEW";
         [StringLength(15)]
         public string DeliveryMode { get; set; } = "PickUp";
-        public DateTime DropOff { get; set; } = DateTime.Today;
-        public DateTime CompletionDate { get; set; } = DateTime.Today.AddDays(42);
+        public DateTime? DropOff { get; set; } = DateTime.Now;
+        public DateTime? CompletionDate { get; set; } = DateTime.Today.AddDays(42);
         [Column(TypeName = "decimal(11,2)")]
         public decimal Total { get; set; } = 0;
 
