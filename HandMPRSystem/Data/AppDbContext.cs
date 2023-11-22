@@ -23,5 +23,7 @@ namespace HandMPRSystem.Data
         public DbSet<HandMPRSystem.Models.Pantograph> Pantographs { get; set; } = default!;
 
         public DbSet<HandMPRSystem.Models.Orderline> Orderlines { get; set; } = default!;
+
+        public DbSet<HandMPRSystem.Models.Quilt> Quilts { get; set; } = default!;
     }
 }

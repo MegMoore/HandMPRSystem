@@ -1,4 +1,6 @@
-﻿namespace HandMPRSystem.Models
+﻿
+
+namespace HandMPRSystem.Models
 {
     public class Quilt
     {
@@ -16,7 +18,7 @@
         private decimal? BindingPrice {  get; set; } = 0;
         private decimal? BindingCost => Parimeter * BindingPrice;
         private decimal? BindingStripsNeeded => Parimeter / 44;
-        private //decimal? BindingYardageNeeded => BindingStripsNeeded * 2.5;
+        //private decimal? BindingYardageNeeded => BindingStripsNeeded * 2.5;
         private decimal? BackingPrice { get; set; } = 0;
         private decimal? BackingCost => (Width + 6) / 36 * BackingPrice;
         private decimal? BackingAmountNeeded => Width + 6;
